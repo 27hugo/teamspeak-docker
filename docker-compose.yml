@@ -1,0 +1,53 @@
+version: "3.7"
+services:
+
+  web:
+    build: .
+    container_name: teamspeak-app
+    image: teamspeak-app
+    ports:
+      - 80:80
+    depends_on: 
+      - mysql
+    environment: 
+      MYSQL_HOST: teamspeak-mysql
+      MYSQL_USER: teamspeak
+      MYSQL_PASSWORD: teamspeak
+      MYSQL_DATABASE: teamspeak_db
+      TS3_HOST: ts3server
+      TS3_USER: serveradmin
+      TS3_PASSWORD: 2EAouqs3
+    networks: 
+      - nginxphp
+
+  mysql:
+    image: mysql:5.7
+    networks:
+      - nginxphp
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: teamspeak
+      MYSQL_PASSWORD: teamspeak
+      MYSQL_DATABASE: teamspeak_db
+    container_name: teamspeak-mysql
+    command: --init-file /tmp/database/webapp_init.sql
+    volumes:
+      - ./database/setup.sql:/tmp/database/webapp_init.sql
+  
+  ts3server:
+    container_name: teamspeak-server
+    image: teamspeak
+    restart: always
+    networks: 
+      - nginxphp
+    ports:
+      - 9987:9987/udp
+      - 10011:10011
+      - 30033:30033
+    environment:
+      TS3SERVER_LICENSE: accept
+    volumes: 
+      - ./database/ts3server.sqlitedb:/var/ts3server/ts3server.sqlitedb
+
+networks:
+  nginxphp:
