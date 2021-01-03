@@ -1,0 +1,55 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/teamspeak-front/node_modules
+/teamspeak-front/.pnp
+/teamspeak-front.pnp.js
+
+# testing
+/teamspeak-front/coverage
+
+# production
+/teamspeak-front/build
+
+# misc
+/teamspeak-front.DS_Store
+/teamspeak-front.env.local
+/teamspeak-front.env.development.local
+/teamspeak-front.env.test.local
+/teamspeak-front.env.production.local
+
+/teamspeak-frontnpm-debug.log*
+/teamspeak-frontyarn-debug.log*
+/teamspeak-frontyarn-error.log*
+
+/teamspeak-front.DS_Store
+
+/teamspeak-api/application/cache/*
+/teamspeak-api/!application/cache/index.html
+
+/teamspeak-api/application/config/*
+
+/teamspeak-api/application/logs/*
+/teamspeak-api/!application/logs/index.html
+
+/teamspeak-api/composer.lock
+
+/teamspeak-api/user_guide_src/build/*
+/teamspeak-api/user_guide_src/cilexer/build/*
+/teamspeak-api/user_guide_src/cilexer/dist/*
+/teamspeak-api/user_guide_src/cilexer/pycilexer.egg-info/*
+/teamspeak-api/vendor/
+
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+/tests/tests/
+/tests/results/
