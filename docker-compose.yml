@@ -32,7 +32,7 @@ services:
     container_name: teamspeak-mysql
     command: --init-file /tmp/database/webapp_init.sql
     volumes:
-      - ./database/setup.sql:/tmp/database/webapp_init.sql
+      - ./database/webapp_init.sql:/tmp/database/webapp_init.sql
   
   ts3server:
     container_name: teamspeak-server
