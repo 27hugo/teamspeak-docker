@@ -27,7 +27,6 @@
 /teamspeak-api/application/cache/*
 /teamspeak-api/!application/cache/index.html
 
-/teamspeak-api/application/config/*
 
 /teamspeak-api/application/logs/*
 /teamspeak-api/!application/logs/index.html
