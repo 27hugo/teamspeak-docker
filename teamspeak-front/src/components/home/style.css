@@ -1,0 +1,6 @@
+.card-image{
+    transition: .3s;
+}
+.card-image:hover{
+    transform: translateY(-15px);
+}
